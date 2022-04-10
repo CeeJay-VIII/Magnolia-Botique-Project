@@ -1,0 +1,89 @@
+﻿@model ProjectVIII.Models.AdminRegister
+
+@{
+    ViewBag.Title = "ContactDetailed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ContactDetailed</h2>
+
+<div>
+    <h4>AdminRegister</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.firstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.lastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.studentNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.studentNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.idNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.idNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.emailAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.emailAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DOB)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.age)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.age)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.gender)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Contact","Home")
+</p>

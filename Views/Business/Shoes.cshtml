@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Shoes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<header>
+    <div class="navbar navbar-inverse">
+        <div class="panel-default">
+            <div class="navbar-header" style="color:aqua">
+                @Html.ActionLink("Magnolia Boutique", "Index", "Home", new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Catergory <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="background-color:dimgrey">
+                            <li>@Html.ActionLink("Clothes", "Clothes", "Business")</li>
+                            <li>@Html.ActionLink("Shoes", "Shoes", "Business")</li>
+                            <li>@Html.ActionLink("Bags", "Bags", "Business")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<h2>Shoes</h2>
+
