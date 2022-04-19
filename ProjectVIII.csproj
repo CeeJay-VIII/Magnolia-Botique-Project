@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\AdminRegister.cs" />
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\DataAccess.cs" />
     <Compile Include="Models\InputValidations\Validations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,10 +224,11 @@
     <Content Include="Views\Business\Clothes.cshtml" />
     <Content Include="Views\Business\Shoes.cshtml" />
     <Content Include="Views\Business\Bags.cshtml" />
+    <Content Include="Views\Business\Transactions.cshtml" />
+    <Content Include="Views\Business\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Main\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

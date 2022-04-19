@@ -4314,8 +4314,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-fixed-top {
-  top: 0;
-  border-width: 0 0 1px;
+    top: 0;
+    border-width: 0 0 1px;
+    background-color: cadetblue;
 }
 .navbar-fixed-bottom {
   bottom: 0;
