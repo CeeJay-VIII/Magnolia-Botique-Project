@@ -20,5 +20,13 @@ namespace ProjectVIII.Controllers
         {
             return View();
         }
+        public ActionResult Transactions()
+        {
+            return View();
+        }
+        public ActionResult Cart()
+        {
+            return View();
+        }
     }
 }

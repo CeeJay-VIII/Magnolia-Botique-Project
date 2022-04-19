@@ -64,7 +64,6 @@ namespace ProjectVIII.Controllers
             return View(adminRegister);
         }
 
-
         //Login
         public ActionResult Login()
         {
@@ -93,7 +92,7 @@ namespace ProjectVIII.Controllers
                         {
                             if(reader.GetString(6) == adminLogin.emailAddress && reader.GetString(7) == adminLogin.password)
                             {
-                                TempData["User"] = $"{reader.GetString(0).Substring(0,1).ToUpper()}. {reader.GetString(1)}";
+                                TempData["User"] = $"{reader.GetString(0).Substring(0,1)}. {reader.GetString(1)}";
                                 return RedirectToAction("Admins", "Authors");
                             }
                         }
@@ -104,11 +103,6 @@ namespace ProjectVIII.Controllers
                 }
             }
             return View(adminLogin);
-        }
-        //Detailed contact info for guests view
-        public ActionResult ContactDetailed(int Id)
-        {
-            return View();
         }
         //Contact info for administrators
         public ActionResult Admins()
@@ -128,8 +122,8 @@ namespace ProjectVIII.Controllers
                     while (reader.Read())
                     {
                         AdminRegister admin = new AdminRegister();
-                        admin.firstName = $"{reader.GetString(0).Substring(0, 1).ToUpper()}{reader.GetString(0).Substring(1).ToLower()}";
-                        admin.lastName = $"{reader.GetString(1).Substring(0, 1).ToUpper()}{reader.GetString(1).Substring(1).ToLower()}";
+                        admin.firstName = reader.GetString(0);
+                        admin.lastName = reader.GetString(1);
                         admin.studentNumber = reader.GetInt32(2);
                         admin.DOB = reader.GetString(3);
                         admin.gender = reader.GetString(4);
