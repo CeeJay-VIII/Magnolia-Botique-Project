@@ -225,6 +225,7 @@
     <Content Include="Views\Business\Shoes.cshtml" />
     <Content Include="Views\Business\Bags.cshtml" />
     <Content Include="Views\Business\Transactions.cshtml" />
+    <Content Include="Views\Business\Carts.cshtml" />
     <Content Include="Views\Business\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
