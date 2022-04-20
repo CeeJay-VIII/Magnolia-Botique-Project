@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjectVIII.Models;
 
 namespace ProjectVIII.Controllers
 {
@@ -24,9 +25,11 @@ namespace ProjectVIII.Controllers
         {
             return View();
         }
-        public ActionResult Cart()
+        public ActionResult Cart(CartModel cartModel)
         {
-            return View();
+            List<CartModel> cartList = new List<CartModel>();
+            cartList.Add(cartModel);
+            return View(cartList);
         }
     }
 }
