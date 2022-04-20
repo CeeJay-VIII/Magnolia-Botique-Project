@@ -27,14 +27,16 @@
                     <div class="pull-right">
                         <ul class="nav navbar-nav" style="margin:6px">
                             <li style="margin-right:25px">
-                                <a href="@Url.Action("Cart","Business")">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
-                                    </svg>0
-                                </a>
+                                <div>
+                                    <a href="@Url.Action("Cart","Business")">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                                        </svg>0
+                                    </a>
+                                </div>
                             </li>
                             <li>
-                                <div><a href="@Url.Action("Login", "Authors")"><i class="bi bi-person-circle"></i>Admin login</a></div>
+                                <div><a style="color:#4800ff" href="@Url.Action("Login", "Authors")"><i class="bi bi-person-circle"></i>Admin login</a></div>
                             </li>
                         </ul>
                     </div>
@@ -52,161 +54,216 @@
         </div>
 
 
-        @*First Row*@
-        <div class="col-md-4">
-            <div id="mycarousel1" class="carousel slide" data-ride="carousel">
-                <!--CAROUSEL INDICATORS-->
-                <ol class="carousel-indicators">
-                    <li data-target="#mycarousel1" data-slide-to="0" class="active"></li>
-                    <li data-target="#mycarousel1" data-slide-to="1"></li>
-                    <li data-target="#mycarousel1" data-slide-to="2"></li>
-                    <li data-target="#mycarousel1" data-slide-to="3"></li>
-                    <li data-target="#mycarousel1" data-slide-to="4"></li>
-                    <li data-target="#mycarousel1" data-slide-to="5"></li>
-                </ol>
-                <!--LIST OF SLIDE IMAGES-->
-                <div class="carousel-inner" role="listbox" style="height:400px">
-                    <div class="item active">
-                        <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Colour-Block-Slim-Fit-Fleece-Hoodie-X-RED-505797370.jpg" height="350" width="350" /></a>
+        
+        <div>
+            @*CLOTHES SLIDES SHOW*@
+            <div class="col-md-4">
+                <div id="mycarousel1" class="carousel slide" data-ride="carousel">
+                    <!--CAROUSEL INDICATORS-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel1" data-slide-to="1"></li>
+                        <li data-target="#mycarousel1" data-slide-to="2"></li>
+                        <li data-target="#mycarousel1" data-slide-to="3"></li>
+                        <li data-target="#mycarousel1" data-slide-to="4"></li>
+                        <li data-target="#mycarousel1" data-slide-to="5"></li>
+                    </ol>
+                    <!--LIST OF SLIDE IMAGES-->
+                    <div class="carousel-inner" role="listbox" style="height:400px,inherit">
+                        <div class="item active">
+                            <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Colour-Block-Slim-Fit-Fleece-Hoodie-X-RED-505797370.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>Colour-Block-Slim-Fit-Fleece-Hoodie-X-RED</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Print-Belted-Wrap-Midi-Dress-X-CHARCOAL-505774124.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>Print-Belted-Wrap-Midi-Dress-X-CHARCOAL</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Slim-Fit-Fleece-Hoodie-NAVY-505805230.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>Slim-Fit-Fleece-Hoodie-NAVY</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Slim-Stretch-Chino-PEWTER-504508260.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>Slim-Stretch-Chino-PEWTER</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Smart-Blazer-BLACK-505849662.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>Smart-Blazer-BLACK</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Slim-Fit-Fleece-Sweatshirt-MUSTARD-505805248.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>Slim-Fit-Fleece-Sweatshirt-MUSTARD</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item">
-                        <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Print-Belted-Wrap-Midi-Dress-X-CHARCOAL-505774124.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Slim-Fit-Fleece-Hoodie-NAVY-505805230.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Slim-Stretch-Chino-PEWTER-504508260.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Smart-Blazer-BLACK-505849662.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Clothes","Business")"><img src="~/Images/Clothes/Slim-Fit-Fleece-Sweatshirt-MUSTARD-505805248.jpg" height="350" width="350" /></a>
-                    </div>
+                    <!--CARET ANCHORS-->
+                    <a class="left carousel-control" href="#mycarousel1" role="button" data-slide="prev">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#mycarousel1" role="button" data-slide="next">
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <!--CARET ANCHORS-->
-                <a class="left carousel-control" href="#mycarousel1" role="button" data-slide="prev">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#mycarousel1" role="button" data-slide="next">
-                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    <span class="sr-only">Next</span>
-                </a>
+                <p><a href="@Url.Action("Clothes","Business")" class="btn btn-primary btn-lg">Shop for clothes &raquo;</a></p>
             </div>
-            <p><a href="@Url.Action("Clothes","Business")" class="btn btn-primary btn-lg">Shop for clothes &raquo;</a></p>
-        </div>
 
-        @*BAGS SLIDE SHOW*@
-        <div class="col-md-4">
-            <div id="mycarousel2" class="carousel slide" data-ride="carousel">
-                <!--CAROUSEL INDICATORS-->
-                <ol class="carousel-indicators">
-                    <li data-target="#mycarousel2" data-slide-to="0" class="active"></li>
-                    <li data-target="#mycarousel2" data-slide-to="1"></li>
-                    <li data-target="#mycarousel2" data-slide-to="2"></li>
-                    <li data-target="#mycarousel2" data-slide-to="3"></li>
-                    <li data-target="#mycarousel2" data-slide-to="4"></li>
-                    <li data-target="#mycarousel2" data-slide-to="5"></li>
-                </ol>
-                <!--LIST OF SLIDE IMAGES-->
-                <div class="carousel-inner" role="listbox" style="height:400px">
-                    <div class="item active">
-                        <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1161325-BLACKANTHRACITEWHITE-1-ayI.jpg" height="350" width="350" /></a>
+            @*BAGS SLIDE SHOW*@
+            <div class="col-md-4">
+                <div id="mycarousel2" class="carousel slide" data-ride="carousel">
+                    <!--CAROUSEL INDICATORS-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel2" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel2" data-slide-to="1"></li>
+                        <li data-target="#mycarousel2" data-slide-to="2"></li>
+                        <li data-target="#mycarousel2" data-slide-to="3"></li>
+                        <li data-target="#mycarousel2" data-slide-to="4"></li>
+                        <li data-target="#mycarousel2" data-slide-to="5"></li>
+                    </ol>
+                    <!--LIST OF SLIDE IMAGES-->
+                    <div class="carousel-inner" role="listbox" style="height:490px">
+                        <div class="item active">
+                            <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1161325-BLACKANTHRACITEWHITE-1-ayI.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>BLACKANTHRACITEWHITE</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1152551-MIDNIGHTNAVY-1-3uU.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>MIDNIGHTNAVY</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1154402-POMEGRANATEPOMEGRANATEWHITE-1-Yol.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>POMEGRANATEPOMEGRANATEWHITE</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1152228-BLACK-1-h3P.jpg" height="350" width="350" /></a>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1161326-BLACKBLACKSUMMITWHITE-1-s6h.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>BLACKBLACKSUMMITWHITE</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1152214-NAVY-1-qN6.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>NAVY-1-qN6</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item">
-                        <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1152551-MIDNIGHTNAVY-1-3uU.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1154402-POMEGRANATEPOMEGRANATEWHITE-1-Yol.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1152228-BLACK-1-h3P.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1161326-BLACKBLACKSUMMITWHITE-1-s6h.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("bags","business")"><img src="~/Images/Bags/1152214-NAVY-1-qN6.jpg" height="350" width="350" /></a>
-                    </div>
+                    <!--CARET ANCHORS-->
+                    <a class="left carousel-control" href="#mycarousel2" role="button" data-slide="prev">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#mycarousel2" role="button" data-slide="next">
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <!--CARET ANCHORS-->
-                <a class="left carousel-control" href="#mycarousel2" role="button" data-slide="prev">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#mycarousel2" role="button" data-slide="next">
-                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    <span class="sr-only">Next</span>
-                </a>
+                <p><a href="@Url.Action("Bags","Business")" class="btn btn-primary btn-lg">Shop for bags &raquo;</a></p>
             </div>
-            <p><a href="@Url.Action("Bags","Business")" class="btn btn-primary btn-lg">Shop for bags &raquo;</a></p>
-        </div>
 
-        @*SHOES SLIDE SHOW*@
-        <div class="col-md-4">
-            <div id="mycarousel3" class="carousel slide" data-ride="carousel">
-                <!--CAROUSEL INDICATORS-->
-                <ol class="carousel-indicators">
-                    <li data-target="#mycarousel3" data-slide-to="0" class="active"></li>
-                    <li data-target="#mycarousel3" data-slide-to="1"></li>
-                    <li data-target="#mycarousel3" data-slide-to="2"></li>
-                    <li data-target="#mycarousel3" data-slide-to="3"></li>
-                    <li data-target="#mycarousel3" data-slide-to="4"></li>
-                    <li data-target="#mycarousel3" data-slide-to="5"></li>
-                </ol>
-                <!--LIST OF SLIDE IMAGES-->
-                <div class="carousel-inner" role="listbox" style="height:400px">
-                    <div class="item active">
-                        <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1161049-WHITE-1-3oK.jpg" height="350" width="350" /></a>
+            @*SHOES SLIDE SHOW*@
+            <div class="col-md-4">
+                <div id="mycarousel3" class="carousel slide" data-ride="carousel">
+                    <!--CAROUSEL INDICATORS-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel3" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel3" data-slide-to="1"></li>
+                        <li data-target="#mycarousel3" data-slide-to="2"></li>
+                        <li data-target="#mycarousel3" data-slide-to="3"></li>
+                        <li data-target="#mycarousel3" data-slide-to="4"></li>
+                        <li data-target="#mycarousel3" data-slide-to="5"></li>
+                    </ol>
+                    <!--LIST OF SLIDE IMAGES-->
+                    <div class="carousel-inner" role="listbox" style="height:490px">
+                        <div class="item active">
+                            <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1161049-WHITE-1-3oK.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>WHITE-1-3oK</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1159214-HYPERVIOLETBLACKFLASHCRIMS-1-kgH.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>HYPERVIOLETBLACKFLASHCRIMS</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1159178-MULTI-1-fPe.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>MULTI-1-fPe.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1158649-REVERIE-1-kot.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>REVERIE-1-kot.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1157398-WHITEBLUEORANGE-1-5TI.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>WHITEBLUEORANGE</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1156500-SMOKEGREYMINTFOAMDUSTYSAG-1-Soa.jpg" height="350" width="350" /></a>
+                            <div class="carousel-caption" style="color:#3f8fcd">
+                                <p>SMOKEGREYMINTFOAMDUSTYSAG</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item">
-                        <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1159214-HYPERVIOLETBLACKFLASHCRIMS-1-kgH.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1159178-MULTI-1-fPe.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1158649-REVERIE-1-kot.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1157398-WHITEBLUEORANGE-1-5TI.jpg" height="350" width="350" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="@Url.Action("Shoes","business")"><img src="~/Images/Shoes/1156500-SMOKEGREYMINTFOAMDUSTYSAG-1-Soa.jpg" height="350" width="350" /></a>
-                    </div>
+                    <!--CARET ANCHORS-->
+                    <a class="left carousel-control" href="#mycarousel3" role="button" data-slide="prev">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#mycarousel3" role="button" data-slide="next">
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <!--CARET ANCHORS-->
-                <a class="left carousel-control" href="#mycarousel3" role="button" data-slide="prev">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#mycarousel3" role="button" data-slide="next">
-                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                    <span class="sr-only">Next</span>
-                </a>
+                <p><a href="@Url.Action("Bags","Business")" class="btn btn-primary btn-lg">Shop for bags &raquo;</a></p>
             </div>
-            <p><a href="@Url.Action("Bags","Business")" class="btn btn-primary btn-lg">Shop for bags &raquo;</a></p>
         </div>
     </div>
+
 
 
     @*FOOTER*@
     <hr />
     <footer class="navbar-nav" style="margin-block-start:35px">
-        <div class="col-md-2">
+        <div class="col-md-3" style="margin-left:4px">
             <p><strong><i>HP team</i></strong></p>
             <img class="img-circle" src="~/Images/Other/Group Logo.jpg" width="90" height="90" />
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <p><strong><i>MB copy rights:</i></strong></p>
             &copy; @DateTime.Now.Year - Magnolia Boutique<br />
             @DateTime.Now.ToString("D")<br />
             MB™
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <p><strong><i>Social media:</i></strong></p>
             <a href="https://www.facebook.com/CeeJay.viii.za" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">
