@@ -27,8 +27,8 @@ namespace ProjectVIII.Models
                     SqlCommand cmd = new SqlCommand("AddAdmin", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue(@"Name", $"{adminRegister.firstName.Substring(0, 1).ToUpper()}{adminRegister.firstName.Substring(1).ToUpper()}");
-                    cmd.Parameters.AddWithValue(@"Surname", $"{adminRegister.lastName.Substring(0, 1)}{adminRegister.lastName.Substring(1)}");
+                    cmd.Parameters.AddWithValue(@"Name", $"{adminRegister.firstName.Substring(0, 1).ToUpper()}{adminRegister.firstName.Substring(1).ToLower()}");
+                    cmd.Parameters.AddWithValue(@"Surname", $"{adminRegister.lastName.Substring(0, 1).ToUpper()}{adminRegister.lastName.Substring(1).ToLower()}");
                     cmd.Parameters.AddWithValue(@"StudentNumber", adminRegister.studentNumber);
                     cmd.Parameters.AddWithValue(@"DOB", adminRegister.DOB);
                     cmd.Parameters.AddWithValue(@"Gender", adminRegister.gender);

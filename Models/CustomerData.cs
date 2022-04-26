@@ -25,7 +25,7 @@ namespace ProjectVIII.Models
         public string province { get; set; }
         [Required,DisplayName("City")]
         public string city { get; set; }
-        [Required,DisplayName("Zip code")]
+        [Required,DisplayName("Zip")]
         public int zipCode { get; set; }
         [DisplayName("Delivery method")]
         public string deliveryMethod { get; set; }

@@ -37,7 +37,7 @@ namespace ProjectVIII.Controllers
             var delivery = new List<string>(){"Delivery","Collection"};
             ViewBag.DeliveryMethod = delivery;
 
-            var payment = new List<string>(){"Credit & Debit card","PayPal"};
+            var payment = new List<string>(){"Credit & Debit card"};
             ViewBag.PaymentMethod = payment;
 
             var bank = new List<string>() { "Absa", "Capitec", "FNB", "Standard bank" };

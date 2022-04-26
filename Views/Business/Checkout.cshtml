@@ -7,7 +7,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 }
 <header>
-    <div class="navbar-fixed-top" style="background-color:cornflowerblue">
+    <div class="navbar-fixed-top" style="background-color:cornflowerblue" id="navbarC">
         <div class="navbar-right" style="margin:10px">
             <a href="@Url.Action("Cart","Business")">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
@@ -17,13 +17,16 @@
         </div>
     </div>
 </header>
-<h2>Checkout</h2>
-
+<h3>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+    </svg>Checkout
+</h3>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 <div class="form-horizontal">
-    <h4>CustomerData</h4>
+    <h4>Fill in all the fields below</h4>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group" id="delivery">
         @Html.LabelFor(model => model.deliveryMethod, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -62,72 +65,43 @@
             @Html.EditorFor(model => model.customerContact, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.customerContact, "", new { @class = "text-danger" })
         </div>
-        <div style="border:5px solid #000000">
-            <p>Checkout cart</p>
-            @{
-                ProjectVIII.Models.CartModel cartModel = new ProjectVIII.Models.CartModel();
-            }
-            <div class="form-group" style="background-color:cadetblue;margin-inline:0px">
-                <table>
-                    <tr>
-                        <th>
-                            @Html.LabelFor(model => cartModel.productName, htmlAttributes: new { @class = "control-label col-md-2" })
-                        </th>
-                        <th>
-                            @Html.LabelFor(model => cartModel.quantity, htmlAttributes: new { @class = "control-label col-md-2" })
-                        </th>
-                        <th>
-                            @Html.LabelFor(model => cartModel.totalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(model => cartModel.productName, new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => cartModel.quantity, new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => cartModel.totalAmount, new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+
     </div>
     <!--Billing address will be visible only if delivery method is Delivery-->
     <div class="col-md-6" id="billingAddress" style="border:5px outset #808080; height:300px">
         <p>Billing address</p>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.physicalAddress, htmlAttributes: new { @class = "control-label col-md-2" })
-            <textarea cols="20" data-val="true" data-val-required="The Physical Address field is required." htmlattributes="{ class = form-control }" id="physicalAddress" name="physicalAddress" rows="2" style="width: 288px; height: 64px;" spellcheck="false"></textarea>
-            @Html.ValidationMessageFor(model => model.physicalAddress, "", new { @class = "text-danger" })
-        </div>
+        <div style="margin:5px">
+            <div class="form-group">
+                @Html.LabelFor(model => model.physicalAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <textarea cols="20" data-val="true" data-val-required="The Physical Address field is required." htmlattributes="{ class = form-control }" id="physicalAddress" name="physicalAddress" rows="2" style="width: 288px; height: 55px;" spellcheck="false"></textarea>
+                @Html.ValidationMessageFor(model => model.physicalAddress, "", new { @class = "text-danger" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.country, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.country, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.country, "", new { @class = "text-danger" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.country, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.country, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.country, "", new { @class = "text-danger" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.province, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.province, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.province, "", new { @class = "text-danger" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.province, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.province, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.province, "", new { @class = "text-danger" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.city, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.city, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.zipCode, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.zipCode, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.zipCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.zipCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.zipCode, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
     <!--Collecton address will be visible only if delivery method is Collection-->
@@ -155,7 +129,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-8" id="cardP">
+    <div class="col-md-6" id="null" style="border:5px outset #808080;height:300px">
+        <p>Choose delivery option above</p>
+    </div>
+    <div class="col-md-7" id="cardP">
         <p>Payment</p>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -183,27 +160,69 @@
             @Html.ValidationMessageFor(model => model.CVV, "", new { @class = "text-danger" })
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.paypalEmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
             @Html.EditorFor(model => model.paypalEmailAddress, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.paypalEmailAddress, "", new { @class = "text-danger" })
+        </div>*@
+        <br /><br />
+        <div>
+            <i class="bi bi-bag-heart"></i>@Html.ActionLink("Back to cart", "Cart", "Business")
         </div>
     </div>
-    <div class="col-md-6">
-
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Place order" class="has-success" />
+    <div class="col-md-4">
+        <div style="border:5px solid #000000; margin-top:22px">
+            <p>Checkout cart</p>
+            @{
+                ProjectVIII.Models.CartModel cartModel = new ProjectVIII.Models.CartModel();
+                List<ProjectVIII.Models.CartModel> cart = new List<ProjectVIII.Models.CartModel>();
+            }
+            <div class="form-group" style="background-color:cadetblue;margin-inline:0px">
+                <table>
+                    <tr>
+                        <th>
+                            @Html.LabelFor(model => cartModel.productName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </th>
+                        <th>
+                            @Html.LabelFor(model => cartModel.quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </th>
+                        <th>
+                            @Html.LabelFor(model => cartModel.totalAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </th>
+                    </tr>
+                    @foreach (var Item in cart)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => cartModel.productName, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => cartModel.quantity, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => cartModel.totalAmount, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:50px; margin-left:22px">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+                    </svg>
+                    Checkout
+                </button>
+            </div>
         </div>
     </div>
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to cart", "Cart", "Business")
-</div>
 <script type="text/javascript">
     $("#billingAddress").hide();
     $("#collectionAddress").hide();
@@ -222,10 +241,15 @@
         if (method == "Delivery") {
             $("#billingAddress").show();
             $("#collectionAddress").hide();
+            $("#null").hide();
         }
         else if (method == "Collection") {
             $("#collectionAddress").show();
             $("#billingAddress").hide();
+            $("#null").hide();
+        }
+        else {
+            $("#null").show();
         }
     }
 </script>
