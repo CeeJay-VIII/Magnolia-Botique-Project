@@ -57,9 +57,43 @@ namespace ProjectVIII.Models
                 }
             }
         }
-        public void ViewAdmins()
-        {
 
+        //Adding item to the cart
+        public static int Qty;
+        public void AddToCart(CartModel cartModel)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("AddToCart", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue(@"Name", cartModel.productName);
+                    cmd.Parameters.AddWithValue(@"Price", cartModel.price);
+                    cmd.ExecuteNonQuery();
+                    Qty++;
+                    cartModel.cartItems = Qty;
+                }
+            }
+            catch (Exception)
+            {
+                cartModel.cartItems = Qty;
+            }
+        }
+        //Delete item from the cart
+        public void DeleteFromCart(int Id)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql_proc = "DELETE FROM [dbo].[Cart] WHERE [Id] =" + Id + "";
+                using (SqlCommand cmd = new SqlCommand(sql_proc, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
