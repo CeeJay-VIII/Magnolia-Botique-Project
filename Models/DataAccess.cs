@@ -44,6 +44,7 @@ namespace ProjectVIII.Models
                 UserAdded = false;
             }
         }
+
         //Delete Admin
         public void DeleteAdmin(int StudentNo)
         {
@@ -82,6 +83,7 @@ namespace ProjectVIII.Models
                 cartModel.cartItems = Qty;
             }
         }
+
         //Delete item from the cart
         public void DeleteFromCart(int Id)
         {
@@ -92,8 +94,15 @@ namespace ProjectVIII.Models
                 using (SqlCommand cmd = new SqlCommand(sql_proc, conn))
                 {
                     cmd.ExecuteNonQuery();
+                    Qty--;
                 }
             }
+        }
+        
+        //Total cart items
+        public int TotalCartItems()
+        {
+            return Qty;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjectVIII.Models.CartModel
 @{
     ViewBag.Title = "Bags";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,7 +25,7 @@
                     </li>
                     <li style="margin-left:320px">
                         <a href="@Url.Action("Cart","Business")">
-                            0
+                            @Html.DisplayFor(model => model.cartItems)
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
                             </svg>
@@ -35,14 +35,80 @@
             </div>
         </div>
     </div>
-    <img src="~/Images/Bags/1150422-BLUEVOIDHYPERROYAL-1-jvH.jpg" height="300" width="300" /><h4>R500</h4>
-    <img src="~/Images/Bags/1152214-NAVY-1-qN6.jpg" height="300" width="300" /><h4>R450</h4>
-    <img src="~/Images/Bags/1152228-BLACK-1-h3P.jpg" height="300" width="300" /><h4>R400</h4>
-    <img src="~/Images/Bags/1152231-BLACK-1-UkD.jpg" height="300" width="300" /><h4>R400</h4>
-    <img src="~/Images/Bags/1152551-MIDNIGHTNAVY-1-3uU.jpg" height="300" width="300" /><h4>R480</h4>
-    <img src="~/Images/Bags/1154402-POMEGRANATEPOMEGRANATEWHITE-1-Yol.jpg" height="300" width="300" /><h4>R350</h4>
-    <img src="~/Images/Bags/1161325-BLACKANTHRACITEWHITE-1-ayI.jpg" height="300" width="300" /><h4>500</h4>
-    <img src="~/Images/Bags/1161326-BLACKBLACKSUMMITWHITE-1-s6h.jpg"height="300"width="300" /><h4>R430</h4>
+</header>
+@using (Html.BeginForm())
+{
+<table>
+    <tr><!--First row-->
+        <td>
+            <img src="~/Images/Bags/1150422-BLUEVOIDHYPERROYAL-1-jvH.jpg" height="300" width="300" />
+            <h5>BLUE VOID HYPERROYAL</h5>
+            <h4>
+                R499,99
+                <button type="submit" name="S1150422" value="BLUE_VOID_HYPERROYAL">ADD</button>
+            </h4>
+        </td>
+        <td>
+            <img src="~/Images/Bags/1152214-NAVY-1-qN6.jpg" height="300" width="300" />
+            <h5>NAVY-1-qN6 ADIDAS</h5>
+            <h4>
+                R449,99
+                <button type="submit" name="S1152214" value="NAVY_1_qN6_ADIDAS">ADD</button>
+            </h4>
+        </td>
+        <td>
+            <img src="~/Images/Bags/1152228-BLACK-1-h3P.jpg" height="300" width="300" />
+            <h5>BLACK-1-h3P ADIDAS</h5>
+            <h4>
+                R399,99
+                <button type="submit" name="S1152228" value="BLACK_1_h3P_ADIDAS">ADD</button>
+            </h4>
+        </td>
+        <td>
+            <img src="~/Images/Bags/1152231-BLACK-1-UkD.jpg" height="300" width="300" />
+            <h5>BLACK BAG ADIDAS</h5>
+            <h4>
+                R399,99
+                <button type="submit" name="S1152231" value="BLACK_BAG_ADIDAS">ADD</button>
+            </h4>
+        </td>
+    </tr>
+    <tr><!--Second row-->
+        <td>
+            <img src="~/Images/Bags/1152551-MIDNIGHTNAVY-1-3uU.jpg" height="300" width="300" />
+            <h5>MIDNIGHT NAVY UNDERARMOUR</h5>
+            <h4>
+                R479,99
+                <button type="submit" name="S1152551" value="MIDNIGHT_NAVY_UNDERARMOUR">ADD</button>
+            </h4>
+        </td>
+        <td>
+            <img src="~/Images/Bags/1154402-POMEGRANATEPOMEGRANATEWHITE-1-Yol.jpg" height="300" width="300" />
+            <h5>POME GRANATE RED NIKE</h5>
+            <h4>
+                R349,99
+                <button type="submit" name="S1154402" value="POME_GRANATE_RED_NIKE">ADD</button>
+            </h4>
+        </td>
+        <td>
+            <img src="~/Images/Bags/1161325-BLACKANTHRACITEWHITE-1-ayI.jpg" height="300" width="300" />
+            <h5>BLACK ANTHRACITE NIKE</h5>
+            <h4>
+                R499,99
+                <button type="submit" name="S1161325" value="BLACK_ANTHRACITE_NIKE">ADD</button>
+            </h4>
+        </td>
+        <td>
+            <img src="~/Images/Bags/1161326-BLACKBLACKSUMMITWHITE-1-s6h.jpg" height="300" width="300" />
+            <h5>BLACK SUMMIT NIKE</h5>
+            <h4>
+                R429,99
+                <button type="submit" name="S1161326" value="BLACK_SUMMIT_NIKE">ADD</button>
+            </h4>
+        </td>
+    </tr>
+</table>
+}
 
 
 

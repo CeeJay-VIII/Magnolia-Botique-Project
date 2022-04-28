@@ -104,6 +104,7 @@ namespace ProjectVIII.Controllers
             }
             return View(adminLogin);
         }
+
         //Contact info for administrators
         public ActionResult Admins()
         {
@@ -138,6 +139,7 @@ namespace ProjectVIII.Controllers
             }
             return View(adminList);
         }
+
         //Delete Admin
         public ActionResult Delete(int Student)
         {
