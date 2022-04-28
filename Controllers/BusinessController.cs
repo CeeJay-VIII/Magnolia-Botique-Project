@@ -17,6 +17,8 @@ namespace ProjectVIII.Controllers
         //Clothes controller
         public ActionResult Clothes(CartModel cartModel)
         {
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.TotalCartItems();
             return View(cartModel);
         }
         [HttpPost]
@@ -45,7 +47,7 @@ namespace ProjectVIII.Controllers
                 cartModel.price = 450;
                 dataAccess.AddToCart(cartModel);
                 return View(cartModel);
-            }
+            }//End of first row
             else if (Abrasion != null)
             {
                 cartModel.productName = Abrasion;
@@ -66,7 +68,7 @@ namespace ProjectVIII.Controllers
                 cartModel.price = 500;
                 dataAccess.AddToCart(cartModel);
                 return View(cartModel);
-            }
+            }//End of second row
             else if (Dress!=null)
             {
                 cartModel.productName = Dress;
@@ -87,7 +89,7 @@ namespace ProjectVIII.Controllers
                 cartModel.price = 400;
                 dataAccess.AddToCart(cartModel);
                 return View(cartModel);
-            }
+            }//End of third row
             else if (Chino!=null)
             {
                 cartModel.productName = Chino;
@@ -114,12 +116,171 @@ namespace ProjectVIII.Controllers
 
 
         //Shoes view
-        public ActionResult Shoes()
+        public ActionResult Shoes(CartModel cartModel)
         {
+            return View(cartModel);
+        }
+        [HttpPost]
+        public ActionResult Shoes(CartModel cartModel, string S1152230, string S1153301, string S1156500,
+            string S1157398, string S1158013, string S1158236, string S1158550, string S1158626, string S1158649,
+            string S1159140, string S1159178, string S1159214)
+        {
+            DataAccess dataAccess = new DataAccess();
+            if (S1152230 != null)
+            {
+                cartModel.productName = S1152230;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1153301 != null)
+            {
+                cartModel.productName = S1153301;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1156500 != null)
+            {
+                cartModel.productName = S1156500;
+                cartModel.price = 400;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1157398 != null)
+            {
+                cartModel.productName = S1157398;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1158013 != null)
+            {
+                cartModel.productName = S1158013;
+                cartModel.price = 1000;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1158236 != null)
+            {
+                cartModel.productName = S1158236;
+                cartModel.price = 400;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1158550 != null)
+            {
+                cartModel.productName = S1158550;
+                cartModel.price = 1500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1158626 != null)
+            {
+                cartModel.productName = S1158626;
+                cartModel.price = 650;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1158649 != null)
+            {
+                cartModel.productName = S1158649;
+                cartModel.price = 700;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1159140 != null)
+            {
+                cartModel.productName = S1159140;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1159178 != null)
+            {
+                cartModel.productName = S1159178;
+                cartModel.price = 300;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1159214 != null)
+            {
+                cartModel.productName = S1159214;
+                cartModel.price = 1800;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
             return View();
         }
-        public ActionResult Bags()
+        //Bags view
+        public ActionResult Bags(CartModel cartModel)
         {
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.TotalCartItems();
+            return View(cartModel);
+        }
+        [HttpPost]
+        public ActionResult Bags(CartModel cartModel, string S1150422, string S1152214,
+            string S1152228, string S1152231, string S1152551, string S1154402, string S1161325,
+            string S1161326)
+        {
+            DataAccess dataAccess = new DataAccess();
+            if (S1150422 != null)
+            {
+                cartModel.productName = S1150422;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1152214 != null)
+            {
+                cartModel.productName = S1152214;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1152228 != null)
+            {
+                cartModel.productName = S1152228;
+                cartModel.price = 400;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1152231 != null)
+            {
+                cartModel.productName = S1152231;
+                cartModel.price = 400;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1152551 != null)
+            {
+                cartModel.productName = S1152551;
+                cartModel.price = 480;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1154402 != null)
+            {
+                cartModel.productName = S1154402;
+                cartModel.price = 350;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1161325 != null)
+            {
+                cartModel.productName = S1161325;
+                cartModel.price = 500;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
+            else if (S1161326 != null)
+            {
+                cartModel.productName = S1161326;
+                cartModel.price = 430;
+                dataAccess.AddToCart(cartModel);
+                return View(cartModel);
+            }
             return View();
         }
         public ActionResult Transactions()

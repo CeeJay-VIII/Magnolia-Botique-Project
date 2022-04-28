@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjectVIII.Models.CartModel
 @{
     ViewBag.Title = "Clothes";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,7 +26,7 @@
                         </li>
                         <li style="margin-left:320px">
                             <a href="@Url.Action("Cart","Business")">
-                                0
+                                @Html.DisplayFor(model => model.cartItems)
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
                                 </svg>
@@ -38,22 +38,117 @@
         </div>
     </header>
     <h2>Clothes</h2>
-    <img src="~/Images/Clothes/Abrasion-Mid-Rise-Skinny-Jeans-DARK-BLUE-505781202.jpg" height="300" width="300" />
-    <h4>Womem Jean:R500
-       <button class="Abrasion">ADD</button>
-    </h4>
-    <img src="~/Images/Clothes/Chenille-Cable-Knit-Cardigan-GREY-MELANGE-505766190-detail.jpg" height="300" width="300" /><h4>Winter Jacket:R300</h4>
-    <img src="~/Images/Clothes/Colour-Block-Slim-Fit-Fleece-Hoodie-X-RED-505797370.jpg" height="300" width="300" /><h4>Male Jacket:R450</h4>
-    <img src="~/Images/Clothes/Delave-Linen-Short-Sleeve-Shirt-FOREST-GREEN-505043368.jpg" height="300" width="300" /><h4>R250</h4>
-    <img src="~/Images/Clothes/Denim-Slim-Fit-Shorts-LIGHT-BLUE-505486644.jpg" height="300" width="300" /><h4>T shirt:R150</h4>
-    <img src="~/Images/Clothes/Funnel-Neck-Puffer-DARK-PINK-505763110-styled.jpg" height="300" width="300" /><h4>Jacket:R500</h4>
-    <img src="~/Images/Clothes/Print-Belted-Wrap-Midi-Dress-X-CHARCOAL-505774124.jpg" height="300" width="300" /><h4>R700</h4>
-    <img src="~/Images/Clothes/Slim-Fit-Fleece-Hoodie-NAVY-505805230.jpg" height="300" width="300" /><h4>TrackSuit:R900</h4>
-    <img src="~/Images/Clothes/Slim-Fit-Fleece-Sweatshirt-MUSTARD-505805248.jpg"height="300"width="300" /><h4>Sweater:R400</h4>
-    <img src="~/Images/Clothes/Slim-Stretch-Chino-PEWTER-504508260.jpg"height="300"width="300" /><h4>Chino:R300</h4>
-    <img src="~/Images/Clothes/Smart-Blazer-BLACK-505849662.jpg"height="300"width="300" /><h4>Two Piece Set:R1000</h4>
-    <img src="~/Images/Clothes/Tennis-Club-Sweatshirt-X-PINK-505758116.jpg"height="300"width="300" /><h4>Female Short:R300</h4>
-    <img src="~/Images/Clothes/Verified-Australian-Merino-Crew-Knit-BLACK-504700882.jpg"height="300"width="300" /><h4>Men Sweater:R400</h4>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>
+                    <img src="~/Images/Clothes/Delave-Linen-Short-Sleeve-Shirt-FOREST-GREEN-505043368.jpg" height="300" width="300" />
+                    <h5>Delave-Linen-Short-Sleeve-Shirt</h5>
+                    <h4>
+                        R249,99
+                        <button type="submit" name="Delave" value="Delave_Linen_Short_Sleeve_Shirt">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Chenille-Cable-Knit-Cardigan-GREY-MELANGE-505766190-detail.jpg" height="300" width="300" />
+                    <h5>Chenille-Cable-Knit-Cardigan</h5>
+                    <h4>
+                        R299,99
+                        <button type="submit" name="Chenille" value="Chenille_Cable_Knit_Cardigan">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Colour-Block-Slim-Fit-Fleece-Hoodie-X-RED-505797370.jpg" height="300" width="300" />
+                    <h5>Slim-Fit-Fleece-Hoodie-X</h5>
+                    <h4>
+                        R449,99
+                        <button type="submit" name="FleeceX" value="Slim_Fit_Fleece_Hoodie_X">ADD</button>
+                    </h4>
+                </td>
+            </tr>
+            <tr><!--Second row-->
+                <td>
+                    <img src="~/Images/Clothes/Abrasion-Mid-Rise-Skinny-Jeans-DARK-BLUE-505781202.jpg" height="300" width="300" />
+                    <h5>Abrasion-Mid-Rise-Skinny-Jeans</h5>
+                    <h4>
+                        R499,99
+                        <button type="submit" name="Abrasion" value="Abrasion_Mid_Rise_Skinny_Jeans">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Denim-Slim-Fit-Shorts-LIGHT-BLUE-505486644.jpg" height="300" width="300" />
+                    <h5>Denim-Slim-Fit-Shorts-</h5>
+                    <h4>
+                        R229,99
+                        <button type="submit" name="Denin" value="Denim_Slim_Fit_Shorts">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Funnel-Neck-Puffer-DARK-PINK-505763110-styled.jpg" height="300" width="300" />
+                    <h5>Funnel-Neck-Puffer</h5>
+                    <h4>
+                        R499,99
+                        <button type="submit" name="Funnel" value="Funnel_Neck_Puffer">ADD</button>
+                    </h4>
+                </td>
+            </tr>
+            <tr><!--Third row-->
+                <td>
+                    <img src="~/Images/Clothes/Print-Belted-Wrap-Midi-Dress-X-CHARCOAL-505774124.jpg" height="300" width="300" />
+                    <h5>FPrint-Belted-Wrap-Midi-Dress-X</h5>
+                    <h4>
+                        R699,99
+                        <button type="submit" name="Dress" value="Belted_Wrap_Midi_Dress_X">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Slim-Fit-Fleece-Hoodie-NAVY-505805230.jpg" height="300" width="300" />
+                    <h5>Slim-Fit-Fleece-Hoodie</h5>
+                    <h4>
+                        R899,99
+                        <button type="submit" name="Fleece" value="Slim_Fit_Fleece_Hoodie">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Slim-Fit-Fleece-Sweatshirt-MUSTARD-505805248.jpg" height="300" width="300" />
+                    <h5>Slim-Fit-Fleece-Sweatshirt</h5>
+                    <h4>
+                        R399,99
+                        <button type="submit" name="FleeceS" value="Slim_Fit_Fleece_Sweatshirt">ADD</button>
+                    </h4>
+                </td>
+            </tr>
+            <tr><!--Fourth row-->
+                <td>
+                    <img src="~/Images/Clothes/Slim-Stretch-Chino-PEWTER-504508260.jpg" height="300" width="300" />
+                    <h5>Slim-Stretch-Chino</h5>
+                    <h4>
+                        R299,99
+                        <button type="submit" name="Chino" value="Slim-Stretch-Chino">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Smart-Blazer-BLACK-505849662.jpg" height="300" width="300" />
+                    <h5>Smart-Blazer</h5>
+                    <h4>
+                        R999,99
+                        <button type="submit" name="Blazer" value="Smart-Blazer">ADD</button>
+                    </h4>
+                </td>
+                <td>
+                    <img src="~/Images/Clothes/Tennis-Club-Sweatshirt-X-PINK-505758116.jpg" height="300" width="300" />
+                    <h5>Tennis-Club-Sweatshirt-X</h5>
+                    <h4>
+                        R299,99
+                        <button type="submit" name="SweatshirtX" value="Tennis_Club_Sweatshirt_X">ADD</button>
+                    </h4>
+                </td>
+            </tr>
+        </table>
+    }
+
+    <img src="~/Images/Clothes/Verified-Australian-Merino-Crew-Knit-BLACK-504700882.jpg" height="300" width="300" /><h4>Men Sweater:R400</h4>
 
     <i class="bi bi-house-fill"></i>@Html.ActionLink("Back home", "Index", "Home")
     <footer>

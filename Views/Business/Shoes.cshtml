@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjectVIII.Models.CartModel
 @{
     ViewBag.Title = "Shoes";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,7 +25,7 @@
                     </li>
                     <li style="margin-left:320px">
                         <a href="@Url.Action("Cart","Business")">
-                            0
+                            @Html.DisplayFor(model => model.cartItems)
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
                             </svg>
@@ -37,18 +37,119 @@
     </div>
 </header>
 <h2>Shoes</h2>
-<img src="~/Images/Shoes/1152230-WHITEBLACKBLACKBLACK-1-8rx.jpg" height="300" width"300" /> <h4>R500</h4>
-<img src="~/Images/Shoes/1153301-VIZIPRO-1-rKJ.jpg" height="300" width="300" /><h4>R600</h4>
-<img src="~/Images/Shoes/1156500-SMOKEGREYMINTFOAMDUSTYSAG-1-Soa.jpg" height="300" width="300" /><h4>R400</h4>
-<img src="~/Images/Shoes/1157398-WHITEBLUEORANGE-1-5TI.jpg" height="300" width="300" /><h4>R500</h4>
-<img src="~/Images/Shoes/1158013-CBLACKFTWWHT-1-KcR.jpg" height="300" width="300" /><h4>R1000</h4>
-<img src="~/Images/Shoes/1158236-BLACKBLACKBLACK-1-Tik.jpg" height="300" width="300" /><h4>R900</h4>
-<img src="~/Images/Shoes/1158550-COREBLACKFTWRWHITECOREBLA-1-TwZ.jpg" height="300" width="300" /><h4>R1500</h4>
-<img src="~/Images/Shoes/1158626-VIZIPRO-1-0FO.jpg" height="300" width="300" /><h4>R650</h4>
-<img src="~/Images/Shoes/1158649-REVERIE-1-kot.jpg" height="300" width="300" /><h4>R700</h4>
-<img src="~/Images/Shoes/1159140-BLACKMULTI-1-gdh.jpg" height="300" width="300" /><h4>R500</h4>
-<img src="~/Images/Shoes/1159178-MULTI-1-fPe.jpg" height="300" width="300" />><h4>R300</h4>
-<img src="~/Images/Shoes/1159214-HYPERVIOLETBLACKFLASHCRIMS-1-kgH.jpg"height="300"width="300" /><h4>R1800</h4>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <!--First row-->
+            <td>
+                <img src="~/Images/Shoes/1152230-WHITEBLACKBLACKBLACK-1-8rx.jpg" height="300" width"300" />
+                <h5>WHITE-BLACK ADIDAS</h5>
+                <h4>
+                    R499,99
+                    <button type="submit" name="S1152230" value="WHITE_BLACK_ADIDAS">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1153301-VIZIPRO-1-rKJ.jpg" height="300" width="300" />
+                <h5>VIZIPRO</h5>
+                <h4>
+                    R599,99
+                    <button type="submit" name="S1153301" value="VIZIPRO">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1156500-SMOKEGREYMINTFOAMDUSTYSAG-1-Soa.jpg" height="300" width="300" />
+                <h5>SMOKE GREY MINT FOAM DUSTY SA</h5>
+                <h4>
+                    R399,99
+                    <button type="submit" name="S1156500" value="SMOKE_GREY_MINT_FOAM">ADD</button>
+                </h4>
+            </td>
+        </tr>
+        <tr>
+            <!--Secong row-->
+            <td>
+                <img src="~/Images/Shoes/1157398-WHITEBLUEORANGE-1-5TI.jpg" height="300" width="300" />
+                <h5>WHITE VAPOR</h5>
+                <h4>
+                    R499,99
+                    <button type="submit" name="S1157398" value="WHITE_VAPOR">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1158013-CBLACKFTWWHT-1-KcR.jpg" height="300" width="300" />
+                <h5>CBLACK FTWWHT ADIDAS</h5>
+                <h4>
+                    R999,99
+                    <button type="submit" name="S1158013" value="CBLACK_FTWWHT_ADIDAS">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1158236-BLACKBLACKBLACK-1-Tik.jpg" height="300" width="300" />
+                <h5>BLACK</h5>
+                <h4>
+                    R399,99
+                    <button type="submit" name="S1158236" value="SMOKE_GREY_MINT_FOAM">ADD</button>
+                </h4>
+            </td>
+        </tr>
+        <tr>
+            <!--Third row-->
+            <td>
+                <img src="~/Images/Shoes/1158550-COREBLACKFTWRWHITECOREBLA-1-TwZ.jpg" height="300" width="300" />
+                <h5>CORE BLACK COREBLA ADIDAS</h5>
+                <h4>
+                    R1499,99
+                    <button type="submit" name="S1158550" value="CORE_BLACK_COREBLA_ADIDAS">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1158626-VIZIPRO-1-0FO.jpg" height="300" width="300" />
+                <h5>VIZIPRO-1-0FO</h5>
+                <h4>
+                    R649,99
+                    <button type="submit" name="S1158626" value="VIZIPRO_1_0FO">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1158649-REVERIE-1-kot.jpg" height="300" width="300" />
+                <h5>REVERIE-1-kot</h5>
+                <h4>
+                    R699,99
+                    <button type="submit" name="S1158649" value="REVERIE_1_kot">ADD</button>
+                </h4>
+            </td>
+        </tr>
+        <tr>
+            <!--Fourth row-->
+            <td>
+                <img src="~/Images/Shoes/1159140-BLACKMULTI-1-gdh.jpg" height="300" width="300" />
+                <h5>SMOKE BLACKMULTI</h5>
+                <h4>
+                    R499,99
+                    <button type="submit" name="S1159140" value="SMOKE_BLACKMULTI">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1159178-MULTI-1-fPe.jpg" height="300" width="300" />
+                <h5>SMOKE MULTI-1-fPe</h5>
+                <h4>
+                    R299,99
+                    <button type="submit" name="S1159178" value="SMOKE_MULTI-1-fPe">ADD</button>
+                </h4>
+            </td>
+            <td>
+                <img src="~/Images/Shoes/1159214-HYPERVIOLETBLACKFLASHCRIMS-1-kgH.jpg" height="300" width="300" />
+                <h5>HYPERVIOLET BLACK FLASH CRIMS</h5>
+                <h4>
+                    R1799,99
+                    <button type="submit" name="S1159214" value="HYPERVIOLET_BLACK_FLASH_CRIMS">ADD</button>
+                </h4>
+            </td>
+        </tr>
+    </table>
+}
 
 <i class="bi bi-house-fill"></i>@Html.ActionLink("Back home", "Index", "Home")
 <footer>
